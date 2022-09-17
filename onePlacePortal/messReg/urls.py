@@ -1,8 +1,8 @@
 from django.urls import path, include
-from messReg.views import student_list, student_detail
+from messReg.views import StudentDetailAV, StudentListAV
 
 
 urlpatterns = [
-    path('list/', student_list, name='student-list'),
-    path('<str:pk>/', student_detail, name='student-detail')
+    path('list/', StudentListAV.as_view(), name='student-list'),
+    path('<str:pk>/', StudentDetailAV.as_view(), name='student-detail')
 ]
